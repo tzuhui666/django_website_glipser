@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glisper</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- 獲取編號頁面 -->
+    <div id="popup-page" class="popup">
+        <div class="popup-content">
+            <header class="popup-header">
+                <div class="popup-logo">Glisper</div>
+                <button class="popup-close" onclick="closePopup()">×</button>
+            </header>
+            <div class="popup-body">
+                <div class="qr-section">
+                    <h2>您的入場編號</h2>
+                    <img src="https://via.placeholder.com/150" alt="QR Code" class="qr-code">
+                    <p>請給工作人員核對身份並掃描入場</p>
+                </div>
+                <div class="notice-section">
+                    <h2>秀場注意事項</h2>
+                    <ol>
+                        <li>請排隊依序入場</li>
+                        <li>心靈不夠堅強的不要隨進場</li>
+                        <li>請不要害羞：交出你的power~~</li>
+                        <li>自信！自信！你最美/帥</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 導覽列 -->
+    <header class="navbar">
+        <div class="logo" onclick="showPage('home')">Glisper</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#exhibition" onclick="showPage('exhibition')">展覽資訊</a></li>
+                <li><a href="#research" onclick="showPage('research')">背景研究</a></li>
+                <li><a href="#presentation" onclick="showPage('presentation')">作品呈現</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 各分頁內容 -->
+    <main>
+        <section id="home" class="page active">
+            <div class="hero-section">
+                <img src="{% static 'images/bg/bg-2.jpg' %}" alt="背景圖" class="hero-image">
+                <div class="hero-content">
+                    <button class="enter-btn" onclick="openPopup()">進入秀場</button>
+                </div>
+                <p class="hero-subtext">元智大學資訊傳播學系 第29屆資訊文化成果展</p>
+            </div>
+            <div class="location-section">
+                <h2>哪裡看展覽？</h2>
+                <p class="location-arrow">↓</p>
+                <div class="locations">
+                    <div class="location">
+                        <div class="location-text">
+                            <h3>校內展</h3>
+                            <p>04/07 Mon – 04/11 Fri</p>
+                            <p>五樓大廳 – 元智大學</p>
+                            <p>地址：桃園市中壢區遠東路135號</p>
+                        </div>
+                        <div class="location-image">
+                            <img src="https://via.placeholder.com/400x200" alt="校內展地圖">
+                        </div>
+                    </div>
+                    <div class="location">
+                        <div class="location-text">
+                            <h3>校外展</h3>
+                            <p>04/25 Fri – 04/28 Mon</p>
+                            <p>松山文創園區 多功能廳</p>
+                            <p>地址：台北市信義區光復南路133號</p>
+                        </div>
+                        <div class="location-image">
+                            <img src="https://via.placeholder.com/400x200" alt="校外展地圖">
+                        </div>
+                    </div>
+                </div>
+                <div class="social-media">
+                    <p>
+                        <span>Instagram: </span>
+                        <a href="#" target="_blank">@glisper__</a> |
+                        <a href="#" target="_blank">@yzuic_28</a>
+                    </p>
+                </div>
+            </div>
+                      
+        </section>
+
+        <section id="exhibition" class="page">
+            <div class="page-container">
+                <div class="exhibition-section">
+                    <header class="exhibition-header">
+                        <h1>我們的展覽在做什麼？</h1>
+                    </header>
+                    <div class="highlight-section">
+                        <!-- 高亮點1 -->
+                        <div class="highlight-item">
+                            <div class="highlight-top">
+                                <div class="highlight-star">
+                                    <img src="{% static 'images/material/Star-1.png' %}" alt="亮點1">
+                                    <span>1</span>
+                                </div>
+                                <div class="highlight-title title-one">時裝通伸展台</div>
+                            </div>
+                            <div class="highlight-bottom">
+                                <p>我們把「美麗羞耻」這個很少被深入探討的心理現象搬進展覽，讓大家能在場感受到心理壓力及反應影響自己的情緒。同時，我們將趣味結合展覽設計中，讓每個人都成為展場中的主角，還兼具了傳統展覽形式之外，也讓觀者有機會重新看見自己，激發他們勇敢面對自己的美麗與獨特性。</p>
+                            </div>
+                        </div>
+                    
+                        <!-- 高亮點2 -->
+                        <div class="highlight-item">
+                            <div class="highlight-top">
+                                <div class="highlight-star">
+                                    <img src="{% static 'images/material/Star-1.png' %}" alt="亮點2">
+                                    <span>2</span>
+                                </div>
+                                <div class="highlight-title title-two">AI音樂及維持封面</div>
+                            </div>
+                            <div class="highlight-bottom">
+                                <p>展覽使用心率感測器，把體驗者的生理數據轉換成專屬的音樂，同時還有一個根據你的穿著設計出的時尚封面，讓整個體驗就像是為你量身打造的個人時裝秀。</p>
+                            </div>
+                        </div>
+                    
+                        <!-- 高亮點3 -->
+                        <div class="highlight-item">
+                            <div class="highlight-top">
+                                <div class="highlight-star">
+                                    <img src="{% static 'images/material/Star-1.png' %}" alt="亮點3">
+                                    <span>3</span>
+                                </div>
+                                <div class="highlight-title title-three">展現個人價值</div>
+                            </div>
+                            <div class="highlight-bottom">
+                                <p>我們希望每個參與者都能感受到「聚光燈下的自己」，不管別人怎麼看，每個人的美都值得被看重和欣賞。展覽透過這些互動增強人們的自信，世界的美有許多面，在這些不可逃避在他人眼中的時光，因為他人的聲音無法定義你是誰，勇敢做自己才是重點！</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="feedback-section">
+                        <h2>來看看大家對美麗羞耻的看法</h2>
+                        <img src="{% static 'images/material/cloud.jpg' %}" alt="互動體驗" class="feedback-image">
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+        </section>
+        
+        <section id="research" class="page">
+            <h2>背景研究</h2>
+            <p></p>
+        </section>
+
+        <section id="presentation" class="page">
+            <div class="presentation-section">
+                <header class="presentation-header">
+                </header>
+                <div class="search-bar">
+                    <input type="text" placeholder="請輸入作品查詢編號">
+                    <button><span>🔍</span></button>
+                </div>
+                <div class="gallery">
+                    <div class="gallery-item" onclick="showDetails(48, '110 bpm / 一分鐘', '休閒系', '流行樂', '電吉他、鼓機、鍵盤合成器')">
+                        <img src="{% static 'images/magazine/1.png' %}" alt="作品1">
+                    </div>
+                    <div class="gallery-item" onclick="showDetails(49, '90 bpm / 一分鐘', '正式系', '古典樂', '鋼琴、小提琴')">
+                        <img src="{% static 'images/magazine/2.png' %}" alt="作品2">
+                    </div>
+                    <div class="gallery-item" onclick="showDetails(50, '120 bpm / 一分鐘', '街頭系', '嘻哈', '電子鼓、合成器')">
+                        <img src="{% static 'images/magazine/5.png' %}" alt="作品3">
+                    </div>
+                    <div class="gallery-item" onclick="showDetails(51, '110 bpm / 一分鐘', '休閒系', '流行樂', '電吉他、鼓機、鍵盤合成器')">
+                        <img src="{% static 'images/magazine/more_cold.jpg' %}" alt="作品4">
+                    </div>
+                    <div class="gallery-item" onclick="showDetails(52, '90 bpm / 一分鐘', '正式系', '古典樂', '鋼琴、小提琴')">
+                        <img src="{% static 'images/magazine/more_warm.jpg' %}" alt="作品5">
+                    </div>
+                    <div class="gallery-item" onclick="showDetails(53, '120 bpm / 一分鐘', '街頭系', '嘻哈', '電子鼓、合成器')">
+                        <img src="{% static 'images/magazine/cold.jpg' %}" alt="作品6">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 詳細資訊彈窗 -->
+            <div id="details-popup" class="details-popup">
+                <div class="details-content">
+                    <button class="close-btn" onclick="closeDetails()">×</button>
+                    <div class="details-layout">
+                        <div class="details-image">
+                            <img id="details-image" src="" alt="詳細圖片">
+                        </div>
+                        <div class="details-info">
+                            <h2 id="details-id"></h2>
+                            <p><strong>心率：</strong><span id="details-heart"></span></p>
+                            <p><strong>衣服風格：</strong><span id="details-style"></span></p>
+                            <p><strong>音樂風格：</strong><span id="details-music"></span></p>
+                            <p><strong>樂器：</strong><span id="details-instruments"></span></p>
+                            <div class="details-audio">
+                                <button class="play-btn">▶</button>
+                                <input type="range" min="0" max="100" value="0">
+                                <span>00:15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

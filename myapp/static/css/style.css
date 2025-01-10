@@ -1,0 +1,627 @@
+/* 基本樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* 導覽列 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-family: 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #6f42c1;
+}
+
+/* 主內容 */
+.page {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.page.active {
+    display: block;
+}
+
+/* 獲取編號頁面 */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 255, 0.9));
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.popup-content {
+    background: white;
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Times New Roman', serif;
+    margin-bottom: 20px;
+}
+
+.popup-logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.popup-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.popup-body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.qr-section, .notice-section {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.qr-section h2, .notice-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+}
+
+.notice-section ol {
+    text-align: left;
+    margin: 0 auto;
+    padding: 0 20px;
+    list-style-position: inside;
+}
+
+/* 首頁 Hero 區域 */
+.hero-section {
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    position: relative;
+}
+
+/* Hero 區域的內容 */
+.hero-content {
+    position: absolute;
+    top: 40%; /* 按鈕的位置調整為圖片偏上的位置 */
+    right: 10%; /* 靠右對齊，距離右側 10% */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 內容靠右對齊 */
+}
+
+/* 按鈕樣式 */
+.enter-btn {
+    padding: 10px 30px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.enter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.enter-btn::after {
+    content: "→";
+    font-size: 16px;
+    color: #000000;
+}
+
+/* Hero 區域的副文字 */
+.hero-subtext {
+    position: absolute;
+    bottom: 10%; /* 文字的位置調整為圖片底部，距離下方 10% */
+    right: 5%; /* 靠右對齊，距離右側 5% */
+    font-size: 14px;
+    color: #000; /* 保持文字黑色 */
+    text-align: right; /* 文字靠右對齊 */
+    font-weight: bold; /* 增加文字加粗效果 */
+}
+
+
+
+
+/* 展覽地點區域 */
+.location-section {
+    text-align: center;
+    padding: 40px 50px;
+    background-color: #fff;
+}
+
+.location-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.location-arrow {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.locations {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+/* 單個展覽區塊 */
+.location {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* 左側文字 */
+.location-text {
+    flex: 1;
+    text-align: left;
+}
+
+.location-text h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.location-text p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+/* 右側圖片 */
+.location-image {
+    flex: 1;
+}
+
+.location-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* 社交媒體區域 */
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media p {
+    font-size: 14px;
+    color: #000;
+}
+
+.social-media a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #6f42c1;
+}
+
+
+
+
+
+/* 外部容器 */
+.page-container {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('./img/bg/bg-4.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    min-height: 100vh; /* 保證背景圖覆蓋整個視窗高度 */
+}
+
+/* 展覽頁面標題 */
+.exhibition-header h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 40px 0;
+    color: #000;
+}
+
+/* 高亮點區域 */
+.highlight-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 40px;
+}
+
+/* 單個亮點區域 */
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    /* background: rgba(255, 255, 255, 0.9); */
+    padding: 20px;
+   
+}
+
+/* 上半區域 */
+.highlight-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 星星區域 */
+.highlight-star {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.highlight-star img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.highlight-star span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 標題區域 */
+.highlight-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 標題背景顏色 */
+.title-one {
+    background: rgba(255, 100, 100, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* 模糊邊界效果 */
+}
+
+.title-two {
+    background: rgba(100, 100, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* 模糊邊界效果 */
+}
+
+.title-three {
+    background: rgba(100, 255, 100, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* 模糊邊界效果 */
+}
+
+/* 下半區域 */
+.highlight-bottom {
+    padding: 15px;
+    background-color: #ffffff; /* 白色背景 */
+    border-radius: 15px; /* 圓角邊框 */
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2),
+                0 0 50px 15px rgba(0, 0, 0, 0.1); /* 外圍模糊效果 */
+    position: relative;
+}
+
+.highlight-bottom p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin: 0;
+}
+
+
+
+
+
+/* 互動體驗區域 */
+.feedback-section {
+    text-align: center;
+    margin: 60px 0;
+}
+
+.feedback-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.feedback-image {
+    width: 90%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* 模糊邊界效果 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 作品呈現區域 */
+.presentation-section {
+    padding: 40px 50px;
+    text-align: center;
+    background-image: url('./img/bg/bg-4.jpg'); /* 替換為您的背景圖片路徑 */
+    background-size: cover; /* 確保圖片覆蓋整個背景 */
+    background-position: center; /* 圖片居中顯示 */
+    background-repeat: no-repeat; /* 防止圖片重複 */
+    color: white; /* 確保文字在背景上清晰可見 */
+}
+
+/* 搜尋欄樣式 */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.search-bar input {
+    width: 50%;
+    max-width: 600px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar button {
+    background-color: #6f42c1;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #5a339f;
+}
+
+/* 圖片展示區域 */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 固定每行顯示三張圖片 */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item {
+    position: relative;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 80%;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
+
+/* 彈窗樣式 */
+.details-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none; /* 預設隱藏 */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.details-content {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 700px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 彈窗排版：左圖右字 */
+.details-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.details-image {
+    flex: 0.8;
+    text-align: center;
+}
+
+.details-image img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #6f42c1;
+}
+
+.details-info {
+    flex: 1;
+    font-size: 16px;
+    text-align: left;
+
+    /* 垂直居中 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.details-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.details-info p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+/* 音樂播放區域 */
+.details-audio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px; /* 與文字保持適當距離 */
+}
+
+.details-audio .play-btn {
+    background: #6f42c1;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.details-audio input[type="range"] {
+    flex: 1;
+}
+
+
+
+
